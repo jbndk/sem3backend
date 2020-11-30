@@ -22,12 +22,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import utils.EMF_Creator;
 
 /**
  *
  * @author am
  */
+@Disabled
 public class DestinationResourceTest {
 
     private static final int SERVER_PORT = 7777;
@@ -72,8 +74,8 @@ public class DestinationResourceTest {
 
         try {
             em.getTransaction().begin();
-            //em.createQuery("delete from Users").executeUpdate();
-            //em.createNamedQuery("Users.deleteAllRows").executeUpdate();
+            //em.createQuery("delete from User").executeUpdate();
+            em.createNamedQuery("User.deleteAllRows").executeUpdate();
             em.persist(u1);
             em.persist(u2);
             //em.persist(d1);
